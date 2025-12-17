@@ -21,13 +21,7 @@
     }
   </style>
 </head>
-<script>
-const audio = document.getElementById("bgm");
-document.addEventListener("click", () => {
-  audio.play();
-}, { once: true });
-</script>
-  
+
 <body>
 
   <audio id="bgm" src="lagu.mp3" loop></audio>
@@ -49,6 +43,12 @@ document.addEventListener("click", () => {
     const audio = document.getElementById("bgm");
     const btn = document.getElementById("musicBtn");
 
+    // Auto play lepas first click
+    document.addEventListener("click", () => {
+      audio.play();
+    }, { once: true });
+
+    // Butang play / pause
     btn.onclick = () => {
       if (audio.paused) {
         audio.play();
@@ -59,6 +59,7 @@ document.addEventListener("click", () => {
       }
     };
 
+    // Countdown birthday
     const birthday = new Date("2025-11-11");
     setInterval(() => {
       const diff = birthday - new Date();
