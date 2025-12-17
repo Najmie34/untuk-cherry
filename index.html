@@ -4,6 +4,47 @@
   <title>Untuk Cherry 🍒</title>
   <link rel="stylesheet" href="style.css">
 </head>
+  <audio id="bgm" src="lagu.mp3" loop></audio>
+
+<div id="musicBtn">💖🎵</div>
+
+<script>
+const audio = document.getElementById("bgm");
+const btn = document.getElementById("musicBtn");
+
+btn.onclick = () => {
+  if (audio.paused) {
+    audio.play();
+    btn.innerHTML = "💖🎵";
+  } else {
+    audio.pause();
+    btn.innerHTML = "💔⏸️";
+  }
+};
+</script>
+
+<style>
+#musicBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 30px;
+  animation: beat 1s infinite;
+}
+@keyframes beat {
+  0%,100% {transform: scale(1);}
+  50% {transform: scale(1.2);}
+}
+  <p id="countdown"></p>
+<script>
+const birthday = new Date("2025-11-11");
+setInterval(() => {
+  const diff = birthday - new Date();
+  const days = Math.floor(diff / (1000*60*60*24));
+  document.getElementById("countdown").innerHTML =
+    "🎂 Countdown birthday awak: " + days + " hari";
+}, 1000);
+</script>
 <body>
 
 <audio autoplay loop>
