@@ -21,7 +21,13 @@
     }
   </style>
 </head>
-
+<script>
+const audio = document.getElementById("bgm");
+document.addEventListener("click", () => {
+  audio.play();
+}, { once: true });
+</script>
+  
 <body>
 
   <audio id="bgm" src="lagu.mp3" loop></audio>
