@@ -1,64 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="ms">
 <head>
+  <meta charset="UTF-8">
   <title>Untuk Cherry 🍒</title>
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    #musicBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      font-size: 30px;
+      cursor: pointer;
+      animation: beat 1s infinite;
+    }
+
+    @keyframes beat {
+      0%,100% {transform: scale(1);}
+      50% {transform: scale(1.2);}
+    }
+  </style>
 </head>
-  <audio id="bgm" src="lagu.mp3" loop></audio>
 
-<div id="musicBtn">💖🎵</div>
-
-<script>
-const audio = document.getElementById("bgm");
-const btn = document.getElementById("musicBtn");
-
-btn.onclick = () => {
-  if (audio.paused) {
-    audio.play();
-    btn.innerHTML = "💖🎵";
-  } else {
-    audio.pause();
-    btn.innerHTML = "💔⏸️";
-  }
-};
-</script>
-
-<style>
-#musicBtn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  font-size: 30px;
-  animation: beat 1s infinite;
-}
-@keyframes beat {
-  0%,100% {transform: scale(1);}
-  50% {transform: scale(1.2);}
-}
-  <p id="countdown"></p>
-<script>
-const birthday = new Date("2025-11-11");
-setInterval(() => {
-  const diff = birthday - new Date();
-  const days = Math.floor(diff / (1000*60*60*24));
-  document.getElementById("countdown").innerHTML =
-    "🎂 Countdown birthday awak: " + days + " hari";
-}, 1000);
-</script>
 <body>
 
-<audio autoplay loop>
-  <source src="lagu.mp3" type="audio/mpeg">
-</audio>
+  <audio id="bgm" src="lagu.mp3" loop></audio>
 
-<h1>Untuk Awak 🍒</h1>
-<p>Website ni khas untuk awak</p>
+  <div id="musicBtn">💖🎵</div>
 
-<a href="letter.html">💌 Surat</a><br>
-<a href="gallery.html">📸 Galeri</a><br>
-<a href="why.html">❤️ Kenapa Awak</a>
+  <h1>Untuk Awak 🍒</h1>
+  <p>Website ni khas untuk awak</p>
 
-<p><b>Tarikh lahir awak: 11.11</b></p>
+  <a href="letter.html">💌 Surat</a><br>
+  <a href="gallery.html">📸 Galeri</a><br>
+  <a href="why.html">❤️ Kenapa Awak</a>
+
+  <p><b>Tarikh lahir awak: 11.11</b></p>
+
+  <p id="countdown"></p>
+
+  <script>
+    const audio = document.getElementById("bgm");
+    const btn = document.getElementById("musicBtn");
+
+    btn.onclick = () => {
+      if (audio.paused) {
+        audio.play();
+        btn.innerHTML = "💖🎵";
+      } else {
+        audio.pause();
+        btn.innerHTML = "💔⏸️";
+      }
+    };
+
+    const birthday = new Date("2025-11-11");
+    setInterval(() => {
+      const diff = birthday - new Date();
+      const days = Math.floor(diff / (1000*60*60*24));
+      document.getElementById("countdown").innerHTML =
+        "🎂 Countdown birthday awak: " + days + " hari";
+    }, 1000);
+  </script>
 
 </body>
-  </html>
+</html>
